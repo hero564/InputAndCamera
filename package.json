@@ -26,12 +26,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/ilcm"
+    "url": "https://github.com/hero564/InputAndCamera"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/ilcm/issues"
+    "url": "https://github.com/hero564/InputAndCamera/issues"
   },
-  "homepage": "https://github.com/yourusername/ilcm",
+  "homepage": "https://github.com/hero564/InputAndCamera",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
