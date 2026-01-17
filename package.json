@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hero564/InputAndCamera"
+    "url": "git+https://github.com/hero564/InputAndCamera.git"
   },
   "bugs": {
     "url": "https://github.com/hero564/InputAndCamera/issues"
