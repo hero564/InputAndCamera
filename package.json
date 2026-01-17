@@ -1,6 +1,6 @@
 {
   "name": "ilcm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight input and camera library for browser canvas applications",
   "license": "ISC",
   "author": "Volodymyr Kushnir",
