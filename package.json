@@ -1,0 +1,42 @@
+{
+  "name": "ilcm",
+  "version": "1.0.0",
+  "description": "A lightweight input and camera library for browser canvas applications",
+  "license": "ISC",
+  "author": "Volodymyr Kushnir",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "canvas",
+    "input",
+    "camera",
+    "browser",
+    "game-dev",
+    "2d"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ilcm"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/ilcm/issues"
+  },
+  "homepage": "https://github.com/yourusername/ilcm",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
