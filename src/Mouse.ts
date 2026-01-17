@@ -72,6 +72,20 @@ export class Mouse {
         this._wheelDeltaAccY = 0;
     }
 
+    public isPressed(button: MouseButton): boolean {
+        const state = this._inputStates.get(button);
+        return state ? state.isPressed : false;
+    }
+    
+    public isDown(button: MouseButton): boolean {
+        const state = this._inputStates.get(button);
+        return state ? state.isDown : false;
+    }
+    public isReleased(button: MouseButton): boolean {
+        const state = this._inputStates.get(button);
+        return state ? state.isReleased : false;
+    }
+
     get wheelDeltaX(): number {
         return this._lastWheelDeltaX;
     }

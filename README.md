@@ -68,14 +68,54 @@ Properties:
 new Mouse(canvas)
 ```
 
-Properties:
-- `x`, `y`: Mouse position relative to canvas
-- `isButtonDown(button: MouseButton)`: Check if button is pressed
-- `isButtonPressed(button: MouseButton)`: Check if button just pressed
-- `isButtonReleased(button: MouseButton)`: Check if button just released
+**Methods:**
+- `update(): void` - Updates button state transitions (pressed/released). Must be called once per frame in your loop
+- `getWorldX(camera: Camera): number` - Get mouse X position in world coordinates
+- `getWorldY(camera: Camera): number` - Get mouse Y position in world coordinates
 
-Enums:
-- `MouseButton.Left`, `MouseButton.Middle`, `MouseButton.Right`
+**Properties:**
+- `x`, `y`: Mouse position relative to canvas
+- `wheelDeltaX`, `wheelDeltaY`: Mouse wheel delta values (accumulated per frame)
+
+**Button State Methods:**
+- `isDown(button: MouseButton): boolean` - Check if button is currently pressed
+- `isPressed(button: MouseButton): boolean` - Check if button was just pressed (this frame)
+- `isReleased(button: MouseButton): boolean` - Check if button was just released (this frame)
+
+**Enums:**
+- `MouseButton.Left` (0)
+- `MouseButton.Middle` (1)
+- `MouseButton.Right` (2)
+
+**Example:**
+
+```typescript
+class MyLoop extends Loop {
+    constructor(private camera: Camera, private mouse: Mouse) {
+        super();
+    }
+
+    loop(deltaSeconds: number) {
+        this.mouse.update(); // Must call update each frame
+        
+        // Screen coordinates
+        console.log(`Mouse screen: (${this.mouse.x}, ${this.mouse.y})`);
+        
+        // World coordinates
+        const worldX = this.mouse.getWorldX(this.camera);
+        const worldY = this.mouse.getWorldY(this.camera);
+        console.log(`Mouse world: (${worldX}, ${worldY})`);
+        
+        // Mouse wheel
+        console.log(`Wheel delta: (${this.mouse.wheelDeltaX}, ${this.mouse.wheelDeltaY})`);
+        
+        // Button states
+        if (this.mouse.isButtonPressed(MouseButton.Left)) {
+            console.log('Left click!');
+        }
+    }
+}
+```
 
 ### Loop
 

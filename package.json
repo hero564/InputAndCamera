@@ -11,8 +11,7 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    },
-    "./*": false
+    }
   },
   "files": [
     "dist"
@@ -21,6 +20,7 @@
     "canvas",
     "input",
     "camera",
+    "mouse",
     "browser",
     "game-dev",
     "2d"
